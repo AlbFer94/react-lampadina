@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      # Controlla una volta a settimana (ideale per uno scaffold)
+      interval: "weekly"
+      day: "monday"
+    # Raggruppa gli aggiornamenti di devDependencies (es. Vite, ESLint) in un'unica PR
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
+    # Limita il numero massimo di PR aperte contemporaneamente
+    open-pull-requests-limit: 5
+
