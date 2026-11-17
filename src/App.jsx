@@ -1,10 +1,21 @@
-import Test from "@/components/Test";
+import { useState } from "react";
 
 function App() {
+
+  const [accesa, setAccesa] = useState(false);
+
+  function interruttore() {
+    setAccesa(!accesa);
+  }
+
   return (
     <div>
-      <h1>Scaffold Vite + React</h1>
-      <Test />
+      <h1>
+        {accesa ? "La lampadina è accesa" : "La lampadina è spenta"}
+      </h1>
+      <button onClick={interruttore}>
+        {accesa ? "Spegni" : "Accendi"}
+      </button>
     </div>
   );
 }
